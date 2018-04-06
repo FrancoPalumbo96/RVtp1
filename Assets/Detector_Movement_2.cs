@@ -17,12 +17,7 @@ public class Detector_Movement_2 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (condition && manager.transform.position.x < 1 && manager.transform.position.z < -2) {
-			for (int i = 0; i < balls.Length; i++) {
-				balls [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
-			}
-			condition = false;
-		}
+		
 	}
 	void OnTriggerEnter(Collider other)
 	{
