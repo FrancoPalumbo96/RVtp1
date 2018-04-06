@@ -12,6 +12,7 @@ public class DetectorMovement : MonoBehaviour {
 	void Start () {
 		ball = GameObject.Find ("Sphere 1");
 		balls = GameObject.FindGameObjectsWithTag ("ball");
+		text.text = "Hall";
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,15 @@ public class DetectorMovement : MonoBehaviour {
 			for (int i = 0; i < balls.Length; i++) {
 				balls [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
 			}
+			text.text = "Laboratorio";
 		}
-		text.text = "Laboratorio";
+		
+	}
+
+	void OnTriggerExit(Collider other) {
+		if (other.gameObject.CompareTag("Player")) {
+			text.text = "Hall";
+		}
+
 	}
 }
