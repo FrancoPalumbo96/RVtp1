@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DetectorMovement : MonoBehaviour {
 
+	public TextMesh text;
 	private GameObject ball;
 	private GameObject[] balls;
 	// Use this for initialization
@@ -23,6 +25,6 @@ public class DetectorMovement : MonoBehaviour {
 				balls [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
 			}
 		}
-
+		text.text = "Laboratorio";
 	}
 }
